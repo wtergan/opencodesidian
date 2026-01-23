@@ -1,0 +1,27 @@
+# Vault Content - Ignore all notes by default
+*.md
+!README.md
+
+# ...but keep system definitions
+!.opencode/**/*.md
+!06_Metadata/**/*.md
+
+# ...and keep folder documentation
+!00_Inbox/README.md
+!01_Projects/README.md
+!02_Areas/README.md
+!03_Resources/README.md
+!04_Archive/README.md
+!05_Attachments/README.md
+
+# System/IDE Configs
+.DS_Store
+.obsidian/workspace*
+.obsidian/cache
+.trash/
+.opencode.backup/
+07_OLD_VAULT/
+
+# Api Keys
+.env
+node_modules/
