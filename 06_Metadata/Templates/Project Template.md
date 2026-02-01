@@ -4,13 +4,9 @@
 created: {{date:YYYY-MM-DD}}
 status: active
 tags: [project]
+code_path: (optional, if applicable, path to the code)
+target_completion: (optional, if applicable)
 ---
-
-## Project Overview
-
-**Start Date**: {{date}}
-**Target Completion**: 
-**Status**: Active
 
 ## Objectives
 
