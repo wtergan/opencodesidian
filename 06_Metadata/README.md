@@ -15,6 +15,8 @@ The metadata folder contains:
 ```
 06_Metadata/
 ├── Reference/        # Guides and documentation
+│   ├── OpenCode Prompts.md
+│   └── ...
 └── Templates/        # Note templates
     ├── Daily Note Template.md
     ├── Project Template.md
@@ -23,87 +25,216 @@ The metadata folder contains:
     └── Weekly Synthesis Template.md
 ```
 
-## Using Templates
+## Templates
 
-### Manual
-1. Copy template content
-2. Create new note in appropriate PARA folder
-3. Paste and fill in
+### Available Templates
 
-### With OpenCode
+| Template | Purpose | Location |
+|----------|---------|----------|
+| **Daily Note** | Quick daily captures | `Templates/Daily Note Template.md` |
+| **Project** | Active initiatives | `Templates/Project Template.md` |
+| **Research Note** | Knowledge capture | `Templates/Research Note Template.md` |
+| **Area** | Ongoing responsibilities | `Templates/Area Template.md` |
+| **Weekly Synthesis** | Weekly reviews | `Templates/Weekly Synthesis Template.md` |
+
+### Using Templates
+
+#### With OpenCode (Recommended)
+
+**Create from template**:
 ```
-Create a new project using the Project Template.
-Name it [Project Name] and put it in 01_Projects.
+/templates Create a new project called "[Name]"
+/templates Create a daily note for today
+/templates Create a research note about [Topic]
 ```
 
-### With Obsidian Templates Plugin
+**Specify location**:
+```
+Create a new project called "Website Redesign" and put it in 01_Projects
+```
+
+#### Manual (Obsidian)
+
+1. Go to `06_Metadata/Templates/`
+2. Copy desired template content
+3. Create new note in appropriate PARA folder
+4. Paste and customize
+
+#### With Obsidian Templates Plugin
+
 1. Go to Settings → Community Plugins → Templates
 2. Set template folder to `06_Metadata/Templates`
-3. Use `Ctrl/Cmd + T` to insert a template
+3. Use `Ctrl/Cmd + T` to insert template
 
-## Available Templates
+### Template Placeholders
+
+Templates use these placeholders:
+- `{{date}}` or `{{date:YYYY-MM-DD}}` - Current date
+- `{{title}}` - Note title
+- `{{time}}` - Current time
+
+**Note**: These work with Obsidian Templates plugin. OpenCode replaces them automatically.
+
+## Template Details
 
 ### Daily Note Template
+
 Quick daily captures with sections for:
-- Capture (quick thoughts)
-- Questions (curiosities)
-- Insights (learnings)
-- Connections (links)
-- For Tomorrow (follow-ups)
+- **Capture** - Quick thoughts throughout the day
+- **Questions** - Curiosities and wonderings
+- **Insights** - Learnings and realizations
+- **Connections** - Links to other notes
+- **For Tomorrow** - Follow-ups needed
+
+**Usage**:
+```
+/log Starting the new feature implementation
+```
+This auto-creates a daily note if needed and logs the entry.
 
 ### Project Template
+
 Full project structure with:
-- Project overview and dates
-- Objectives checklist
-- Context and success criteria
-- Progress log
-- Next actions
+- **Project Overview** - Dates and status
+- **Objectives** - Checkbox list of goals
+- **Context** - Why this project exists
+- **Success Criteria** - How to know it's done
+- **Key Resources** - Links to relevant notes
+- **Progress Log** - Timeline of work done
+- **Open Questions** - Things to figure out
+- **Next Actions** - Immediate next steps
+
+**Special Fields**:
+```yaml
+---
+created: YYYY-MM-DD
+status: active
+tags: [project]
+code_path: /path/to/code        # Link to codebase
+repo_url: https://github.com/... # Link to repository
+---
+```
 
 ### Research Note Template
+
 Research capture format with:
-- Source and date
-- Summary and key insights
-- Notable quotes
-- Questions raised
-- Connections to other notes
+- **Summary** - Key points (2-3 sentences)
+- **Key Insights** - Bullet list of learnings
+- **Notable Quotes** - Memorable passages
+- **Questions Raised** - Curiosities sparked
+- **Connections** - Links to other notes
+- **Action Items** - Follow-ups needed
 
 ### Area Template
+
 Ongoing responsibility tracking:
-- Overview and status
-- Key metrics/goals
-- Active commitments
-- Routines
-- Review notes
+- **Overview** - What this area is
+- **Current Status** - How things are going
+- **Key Metrics/Goals** - Standards to uphold
+- **Active Commitments** - Ongoing promises
+- **Routines** - Regular activities
+- **Resources** - Tools and references
+- **Review Notes** - Periodic assessments
 
 ### Weekly Synthesis Template
+
 Weekly review format:
-- Week at a glance
-- Key themes
-- Progress by project
-- Energy audit
-- Next week intentions
+- **Week at a Glance** - Stats and accomplishments
+- **Key Themes** - Patterns that emerged
+- **Major Insights** - Breakthrough realizations
+- **Progress by Project** - Status updates
+- **Questions Emerged** - New curiosities
+- **Energy Audit** - What gave/drained energy
+- **Connections Made** - New links discovered
+- **Next Week's Intentions** - Focus areas
+- **To Process** - Items needing attention
 
-## OpenCode Prompts
+## Reference Materials
 
-### Template Usage
-```
-Show me available templates in 06_Metadata/Templates.
-Create a new [type] note using the appropriate template.
+### OpenCode Prompts
+
+Located in `06_Metadata/Reference/OpenCode Prompts.md`
+
+Contains:
+- Common OpenCode commands
+- Workflow shortcuts
+- Quick reference for daily use
+
+## Customizing Templates
+
+### Creating New Templates
+
+1. Create new file in `06_Metadata/Templates/`
+2. Name it `[Type] Template.md`
+3. Include:
+   - Frontmatter section
+   - Clear section headers
+   - Placeholder text in comments (`<!-- -->`)
+   - Links section for connections
+
+**Example structure**:
+```markdown
+---
+description: Template description
+---
+
+# {{title}}
+
+---
+created: {{date:YYYY-MM-DD}}
+tags: []
+---
+
+## Section 1
+<!-- Instructions for this section -->
+
+## Section 2
+<!-- More instructions -->
+
+## Related
+- Projects: 
+- Resources: 
+- Notes: 
 ```
 
-### Quick Project Creation
-```
-Create a new project called "[name]" using the Project Template.
-```
+### Iterating Existing Templates
 
-### Documentation
-```
-Check 06_Metadata/Reference for documentation on [topic].
-```
+As you use templates:
+1. Note what works and what doesn't
+2. Adjust section order
+3. Add/remove sections based on need
+4. Update placeholder text
+5. Share improvements
 
 ## Best Practices
 
 - **Document as you go** - Capture workflows while fresh
-- **Iterate templates** - Improve based on usage
-- **Date everything** - Context matters
+- **Iterate templates** - Improve based on actual usage
+- **Date everything** - Context matters for future you
 - **Keep it simple** - Complex systems break
+- **Use consistently** - Templates only help if you use them
+
+## Workflow Integration
+
+### Starting Work
+
+1. **New project?** → Use Project Template
+2. **Research?** → Use Research Note Template
+3. **New day?** → Daily Note auto-created with `/log`
+4. **Weekly review?** → Weekly Synthesis Template
+
+### During Work
+
+- Reference templates for structure
+- Log to daily notes with `/log`
+- Create research notes as you learn
+
+### End of Work
+
+- Review filled templates
+- Archive completed projects
+- Update area notes
+
+---
+
+*Templates enable consistency. Customize them to fit your workflow.*

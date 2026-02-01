@@ -30,7 +30,7 @@ Conduct an end-of-day review to capture progress and set up tomorrow.
 
 ## Output Format
 
-Create or update a daily note in `00_Inbox/` with:
+Create or update a daily note in `02_Areas/Journal/Daily/` with:
 
 ```markdown
 # Daily Review - [Date]

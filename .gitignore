@@ -13,6 +13,10 @@
 !03_Resources/README.md
 !04_Archive/README.md
 !05_Attachments/README.md
+!07_OLD_VAULT/README.md
+
+# ...and keep root documentation
+!AGENTS.md
 
 # System/IDE Configs
 .DS_Store
