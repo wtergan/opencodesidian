@@ -30,12 +30,14 @@ Handle data source conversions: PDFs, images, documents, and other formats. Extr
 ## Process
 
 1. **Analyze source**: What format? PDF, image, scanned document?
-2. **Load Template**: Read "06_Metadata/Templates/extraction-output-template.md"
-3. **Extract content**: Use `read` for text-based files
-4. **Preserve structure**: Maintain headings, lists, tables
-5. **Flag uncertainties**: Mark unclear sections as `[unclear: ...]`
-6. **Format as markdown**: Clean, usable output
-7. **Write output**: Save to 00_Inbox/extracted-[filename].md
+2. **Load required skills**:
+   - `skill({ name: 'templates' })`
+3. **Read template**: "06_Metadata/Templates/extraction-output-template.md"
+4. **Extract content**: Use `read` for text-based files
+5. **Preserve structure**: Maintain headings, lists, tables
+6. **Flag uncertainties**: Mark unclear sections as `[unclear: ...]`
+7. **Format as markdown**: Clean, usable output
+8. **Write output**: Save to 00_Inbox/extracted-[filename].md
 
 ## Output Format
 

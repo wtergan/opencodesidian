@@ -32,12 +32,15 @@ Take briefs, research, and source materials, then produce structured, engaging c
 ## Process
 
 1. **Understand the brief**: What's the goal? Who's the audience? What's the format?
-2. **Load Template**: Read "06_Metadata/Templates/writing-output-template.md"
-3. **Organize materials**: What research/sources are provided?
-4. **Outline first**: Structure before prose (H2s, H3s, key points)
-5. **Draft freely**: Get it all down, don't self-edit too much
-6. **Apply template**: Fill in Writing Output Template
-7. **Return to Helm**: Provide draft + quality scores
+2. **Load required skills**:
+   - `skill({ name: 'templates' })`
+   - `skill({ name: 'obsidian-markdown' })`
+3. **Read template**: "06_Metadata/Templates/writing-output-template.md"
+4. **Organize materials**: What research/sources are provided?
+5. **Outline first**: Structure before prose (H2s, H3s, key points)
+6. **Draft freely**: Get it all down, don't self-edit too much
+7. **Apply template**: Fill in Writing Output Template
+8. **Return to Helm**: Provide draft + quality scores
 
 ## Writing Process
 

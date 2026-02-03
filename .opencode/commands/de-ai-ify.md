@@ -6,10 +6,15 @@ description: Remove AI patterns and restore human voice
 
 Remove AI-generated patterns and restore natural human voice to your writing.
 
-## Processing: $ARGUMENTS
+## Process
 
-I'll create a de-AI-ified version of your text that sounds more human and less
-machine-generated.
+1. Parse file path from $ARGUMENTS (or use inline text)
+2. Read original content
+3. Spawn @editor with task: "de-ai-ify-only"
+   - Editor performs de-AI-ification pass only
+   - Skips structural/grammatical edits
+4. Editor applies changes directly to file
+5. Return change summary
 
 ## What Gets Removed
 
@@ -65,29 +70,28 @@ machine-generated.
 - Personal perspective
 - Authentic phrasing
 
-## Process
+## Usage
 
-1. **Read original file** (if path provided) or use provided text
-2. **Create copy with "-human" suffix** if editing a file
-3. **Apply de-AI-ification**
-4. **Provide change log**
+```
+/de-ai-ify 03_Resources/my-draft.md
+/de-ai-ify [paste content directly]
+```
 
 ## Output
 
-You'll get:
-
-- Rewritten text with natural human voice
-- Change log showing what was fixed
-- List of places needing specific examples
+- **Modified file**: Original file is updated in-place
+- **Change log**: Summary of patterns removed/changed
+- **Quality note**: Brief assessment of human voice quality
 
 ## Example Transformations
 
-**Before (AI):** "In today's rapidly evolving digital landscape, it's crucial to
-understand that leveraging AI effectively isn't just about utilizing
-cutting-edge technology—it's about harnessing its transformative potential to
-unlock unprecedented opportunities."
+**Before (AI):** "In today's rapidly evolving digital landscape, it's crucial to understand that leveraging AI effectively isn't just about utilizing cutting-edge technology—it's about harnessing its transformative potential to unlock unprecedented opportunities."
 
-**After (Human):** "AI works best when you use it for specific tasks. Focus on
-what it does well: writing code, analyzing data, and answering questions."
+**After (Human):** "AI works best when you use it for specific tasks. Focus on what it does well: writing code, analyzing data, and answering questions."
 
-Let me de-AI-ify your text!
+## When to Use vs /edit
+
+- **/de-ai-ify**: Quick voice-only cleanup (fastest path to natural tone)
+- **/edit**: Full polish including structure, logic, consistency + de-ai-ify
+
+The @editor has built-in de-AI-ify capabilities—this command just isolates that task for speed.

@@ -11,14 +11,13 @@ Polishes existing content: improves clarity, strengthens logic, removes AI patte
 1. Identify content to edit:
    - File path: `/edit path/to/file.md`
    - Inline: User provides content in prompt
-2. Load skill({ name: 'obsidian-markdown' }) ← MANDATORY
-3. Determine edit scope:
+2. Determine edit scope:
    - Light: Fix typos, smooth sentences
    - Medium: Restructure paragraphs, clarify
    - Heavy: Reorganize sections, rewrite
-4. Spawn @editor with content
-5. Editor returns polished content following OFM rules
-6. Return edited content with changes highlighted
+3. Spawn @editor with content and scope
+4. Editor returns polished content following OFM rules
+5. Return edited content with changes highlighted
 
 ## Usage
 

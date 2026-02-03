@@ -10,16 +10,12 @@ Creates content drafts from briefs and research materials.
 
 1. Parse writing brief from $ARGUMENTS
 2. Check if research materials provided or exist in vault
-3. Load skill({ name: 'obsidian-markdown' }) ← MANDATORY
-4. Load skill({ name: 'templates' })
-5. Read "06_Metadata/Templates/writing-output-template.md"
-6. Spawn @writer with:
+3. Spawn @writer with:
    - Brief/topic
-   - Template reference
    - Any research materials (if provided)
-7. Writer returns draft following OFM conventions
-8. Apply template with filled content
-9. Return draft to user (or write to specified path)
+4. Writer returns draft following OFM conventions
+5. Apply template with filled content
+6. Return draft to user (or write to specified path)
 
 ## Usage
 

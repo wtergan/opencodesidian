@@ -10,11 +10,9 @@ Extracts text and structure from PDFs, images, and documents into clean markdown
 
 1. Parse file path from $ARGUMENTS
 2. Validate file exists in 05_Attachments/
-3. Load skill({ name: 'templates' })
-4. Read "06_Metadata/Templates/extraction-output-template.md"
-5. Spawn @extractor with file path and template
-6. Extractor extracts and writes to 00_Inbox/
-7. Suggest PARA destination based on content
+3. Spawn @extractor with file path
+4. Extractor extracts and writes to 00_Inbox/
+5. Suggest PARA destination based on content
 
 ## Usage
 

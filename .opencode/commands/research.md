@@ -13,11 +13,9 @@ Conducts vault search and/or web research on a topic.
    - Vault search (existing notes)
    - Web search (external sources)
    - Both (comprehensive)
-3. Load skill({ name: 'templates' })
-4. Read "06_Metadata/Templates/research-note-template.md"
-5. Spawn @researcher with query, scope, and template
-6. Researcher conducts research and writes to 03_Resources/[topic].md
-7. Return findings summary with quality scores
+3. Spawn @researcher with query and scope
+4. Researcher conducts research and writes to 03_Resources/[topic].md
+5. Return findings summary with quality scores
 
 ## Output
 

@@ -112,17 +112,20 @@ Vault/
 
 ## Skills System
 
-Skills provide specialized knowledge. **Always load before use**:
+Skills provide specialized knowledge for vault operations.
 
-```javascript
-skill({ name: 'templates' })
-skill({ name: 'vault-ops' })
-skill({ name: 'obsidian-markdown' })
-```
+### Architecture
 
-| Skill | Purpose | Used By |
-|-------|---------|---------|
-| `templates` | Note creation templates | All subagents |
+**Subagents load skills internally** — commands should NOT pre-load skills before spawning subagents:
+- Each subagent loads required skills at the start of their process
+- This prevents double-loading and redundant template reads
+- Keeps command files clean and focused on orchestration
+
+### Usage by Role
+
+| Skill | Purpose | Loaded By |
+|-------|---------|-----------|
+| `templates` | Note creation templates | @writer, @researcher, @extractor |
 | `vault-ops` | PARA structure knowledge | @archivist, @researcher |
 | `obsidian-markdown` | Obsidian formatting rules | @writer, @editor |
 | `nano-banana` | Image generation/editing | Writing workflows |
@@ -131,7 +134,7 @@ skill({ name: 'obsidian-markdown' })
 
 ## System Instructions
 
-- **Load skills first**: Always call `skill({ name: '...' })` before using specialized knowledge
+- **Skills in subagents**: Subagents load required skills internally — commands don't pre-load them
 - **Subagent isolation**: Subagents work in isolated contexts and cannot spawn other agents
 - **Three-tier output system**: 
   - Commands = brief descriptions (what user sees)

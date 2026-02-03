@@ -41,12 +41,14 @@ Find information from two sources:
 ## Process
 
 1. **Understand Query**: What does the user need to know?
-2. **Load Template**: Read "06_Metadata/Templates/research-note-template.md"
-3. **Vault Search**: Check if relevant notes already exist
-4. **External Research**: Use Exa to find web sources
-5. **Documentation**: Use Context7 for technical topics
-6. **Synthesize**: Combine findings
-7. **Write Output**: Save to 03_Resources/[topic-name].md using template
+2. **Load required skills**:
+   - `skill({ name: 'templates' })`
+3. **Read template**: "06_Metadata/Templates/research-note-template.md"
+4. **Vault Search**: Check if relevant notes already exist
+5. **External Research**: Use Exa to find web sources
+6. **Documentation**: Use Context7 for technical topics
+7. **Synthesize**: Combine findings
+8. **Write Output**: Save to 03_Resources/[topic-name].md using template
 
 ## Output Format
 

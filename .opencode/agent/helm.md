@@ -84,36 +84,29 @@ On every request, classify intent:
 
 ### Research Pattern
 1. Parse topic from command
-2. Call skill({ name: 'templates' })
-3. Read "06_Metadata/Templates/research-note-template.md"
-4. Spawn @researcher with template + topic
-5. Researcher writes findings to 03_Resources/[topic].md using template
-6. Return: file path + quality summary
+2. Spawn @researcher with query and scope
+3. Researcher loads skills internally, conducts research, writes to 03_Resources/[topic].md
+4. Return: file path + quality summary
 
 ### Writing Pattern
 1. Parse brief from command
-2. Call skill({ name: 'obsidian-markdown' }) ← MANDATORY
-3. Call skill({ name: 'templates' })
-4. Read "06_Metadata/Templates/writing-output-template.md"
-5. Spawn @writer with template reference
-6. Writer returns draft following OFM conventions
-7. Apply template, write to specified path or present
+2. Spawn @writer with brief and research materials
+3. Writer loads skills internally, creates draft following OFM conventions
+4. Return: draft content + quality scores (Helm writes to file)
 
 ### Editing Pattern
-1. Load content to edit
-2. Call skill({ name: 'obsidian-markdown' }) ← MANDATORY
-3. Spawn @editor
-4. Apply edits following OFM rules
-5. Return edited content with quality scores
+1. Parse file path or inline content from command
+2. Determine edit scope (light/medium/heavy) or task mode
+3. Spawn @editor with content and parameters
+4. Editor loads skills internally, performs edits, applies changes
+5. Return: edited content + quality scores + change summary
 
 ### Extraction Pattern
 1. Parse file path from command
-2. Validate file exists
-3. Call skill({ name: 'templates' })
-4. Read "06_Metadata/Templates/extraction-output-template.md"
-5. Spawn @extractor
-6. Extractor writes output using template
-7. Return: file path + quality summary
+2. Validate file exists in 05_Attachments/
+3. Spawn @extractor with file path
+4. Extractor loads skills internally, extracts content, writes to 00_Inbox/
+5. Return: file path + quality summary + PARA destination suggestion
 
 ### Archiving Pattern
 1. List files in 00_Inbox/
@@ -122,6 +115,13 @@ On every request, classify intent:
 4. Synthesize all recommendations
 5. Present categorized list
 6. User decides: move, combine, delete, or keep
+
+### De-AI-ify Pattern
+1. Parse file path or inline content from command
+2. Spawn @editor with task: "de-ai-ify-only"
+3. Editor performs focused de-AI-ification (skips structural edits)
+4. Apply changes directly to file
+5. Return: change summary + quality assessment
 
 ## Quality Gates
 
