@@ -64,6 +64,7 @@ Each subagent returns 0.00-1.00 quality scores and compact summaries (no JSON ar
 | `/daily-review` | End-of-day reflection | Display-only synthesis |
 | `/weekly-synthesis` | Weekly patterns | Creates weekly note |
 | `/create-command` | Create new command | Uses command-template |
+| `/create-skill` | Create new skill | Uses skill-creator guide |
 
 ---
 

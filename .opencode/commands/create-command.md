@@ -48,4 +48,12 @@ The command file name becomes the command. For example:
 - `thinking-partner.md` → `/thinking-partner`
 - `daily-review.md` → `/daily-review`
 
+## Related: Creating Skills
+
+For creating **skills** (reusable knowledge packages used by commands/agents), use `/create-skill` instead:
+- **Commands** = User-facing slash commands (what we're creating here)
+- **Skills** = Internal capabilities loaded by `skill({ name: '...' })`
+
+Skills extend agent capabilities with specialized knowledge and workflows.
+
 Let me help you create your command!

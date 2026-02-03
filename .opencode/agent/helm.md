@@ -123,6 +123,15 @@ On every request, classify intent:
 4. Apply changes directly to file
 5. Return: change summary + quality assessment
 
+### Skill Creation Pattern
+1. Parse skill requirements from command
+2. Load skill({ name: 'skill-creator' }) ← Anthropic's skill creation guide
+3. Design skill structure following principles (concise, appropriate freedom)
+4. Create skill directory at `.opencode/skills/[skill-name]/`
+5. Generate SKILL.md with proper frontmatter and bundled resources
+6. Validate against skill-creator principles
+7. Return: skill path + creation summary + usage instructions
+
 ## Quality Gates
 
 Every subagent output must include:

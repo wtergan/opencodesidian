@@ -53,6 +53,7 @@ Every subagent returns work with 0.00-1.00 quality scores and compact summary (n
 | `/daily-review` | End-of-day reflection (display-only synthesis) |
 | `/weekly-synthesis` | Weekly pattern finding |
 | `/create-command` | Create new command from template |
+| `/create-skill` | Create new skill using skill-creator guide |
 | `/vault-ops` | PARA maintenance help |
 | `/de-ai-ify` | Remove AI patterns |
 | `/context` | Load code from linked project |
