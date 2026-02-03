@@ -1,4 +1,17 @@
-# {{date:YYYY-MM-DD}}
+---
+date: {{date:YYYY-MM-DD}}
+tags: [daily]
+tasks_done: 0
+tasks_total: 0
+mood: 
+energy_level: 
+---
+
+## Tasks
+<!-- Main objectives for the day -->
+- [ ] 
+- [ ] 
+- [ ] 
 
 ## Capture
 <!-- Quick thoughts, links, ideas throughout the day -->

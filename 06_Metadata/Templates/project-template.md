@@ -1,11 +1,10 @@
-# {{title}}
-
 ---
 created: {{date:YYYY-MM-DD}}
 status: active
 tags: [project]
-code_path: (optional, if applicable, path to the code)
-target_completion: (optional, if applicable)
+target_completion: 
+# code_path: /Users/username/Code/project-name
+# repo_url: https://github.com/username/repo
 ---
 
 ## Objectives

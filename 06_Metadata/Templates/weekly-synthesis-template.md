@@ -1,8 +1,7 @@
-# Weekly Synthesis - Week of {{date:YYYY-MM-DD}}
-
 ---
 created: {{date:YYYY-MM-DD}}
 tags: [weekly-review, synthesis]
+week_start: {{date:YYYY-MM-DD}}
 ---
 
 ## Week at a Glance

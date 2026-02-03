@@ -1,24 +1,16 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "mcp": {
-    "gemini-vision": {
-      "type": "local",
-      "command": ["npx", "-y", "@anthropic-ai/mcp-gemini"],
-      "environment": {
-        "GEMINI_API_KEY": "${GEMINI_API_KEY}"
-      },
-      "enabled": false
-    },
-    "firecrawl": {
-      "type": "local",
-      "command": ["npx", "-y", "firecrawl-mcp"],
-      "environment": {
-        "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
-      },
-      "enabled": false
-    }
-  },
+  "instructions": [
+    "When a skill is required for a task, ALWAYS call skill({ name: '...' }) as your first action before proceeding",
+    "Always load skill({ name: 'obsidian-markdown' }) before writing or editing any markdown files in the vault",
+    "Subagents should focus on their specialized task and never attempt to spawn other agents",
+    "For multi-step creative work, start in thinking mode before moving to execution mode"
+  ],
   "permission": {
-    "*": "allow"
+    "*": "allow",
+    "external_directory": "ask",
+    "skill": {
+      "*": "allow"
+    }
   }
 }

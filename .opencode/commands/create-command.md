@@ -23,40 +23,10 @@ I'll help you create a new OpenCode command for your vault.
    - Output format
 
 3. **Create Command File**
-   - Location: `.opencode/commands/[command-name].md`
-   - Include proper frontmatter
-   - Clear instructions
-   - Example usage
-
-## Command Template
-
-```markdown
----
-description: [One-line description shown in command list]
----
-
-# Command Name
-
-Brief description of what this command does.
-
-## Task
-
-[Clear description of the task]
-
-## Process
-
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
-
-## Output
-
-[Expected output format]
-
-## Example Usage
-
-/command-name [arguments]
-```
+   - Load skill({ name: 'templates' })
+   - Read "06_Metadata/Templates/command-template.md"
+   - Customize for specific command
+   - Write to `.opencode/commands/[command-name].md`
 
 ## Best Practices
 
